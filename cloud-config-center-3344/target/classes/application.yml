@@ -19,3 +19,21 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka
+
+# rabbitmq相关配置 15672是web管理界面的端口; 5672 是MQ访问的端口
+rabbitmq:
+  host: localhost
+  port: 5672
+  username: guest
+  password: guest
+
+##########################
+# 需要手动刷新一下,才能不用重启访问3355才可以查看最新配置
+# curl -X POST "http://localhost:3355/actuator/refresh"
+##########################
+# 暴露监控端点
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: 'bus-refresh'
