@@ -28,8 +28,8 @@ rabbitmq:
   password: guest
 
 ##########################
-# 需要手动刷新一下,才能不用重启访问3355才可以查看最新配置
-# curl -X POST "http://localhost:3355/actuator/refresh"
+# 需要手动刷新一下,才能不用重启访问3355才可以查看最新配置，使用了rabbitMQ时，只需要刷新3344即可达到广播的效率
+# curl -X POST "http://localhost:3355/actuator/bus-refresh"
 ##########################
 # 暴露监控端点
 management:
