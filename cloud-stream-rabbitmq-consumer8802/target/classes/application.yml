@@ -20,7 +20,7 @@ spring:
           destination: studyExchange # 表示要使用的Exchange名称定义
           content-type: application/json # 设置消息类型，本次为json,文本则设置"text/plain"
           binder: defaultRabbit #设置要绑定的消息服务的具体设置
-          group: atguiguA     #设置分组 如果在同一组就会出现竞争的情况，同一组的消费者，只会有一个消费者消费；如果是不同组，则不会出现竞争关系，都会消费
+          group: atguiguA     #设置分组 如果在同一组就会出现竞争的情况，同一组的消费者，只会有一个消费者消费；如果是不同组，则不会出现竞争关系，都会消费（相当于广播模式）
 eureka:
   client:
     service-url:
